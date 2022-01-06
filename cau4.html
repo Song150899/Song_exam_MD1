@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ve hinh tron</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400px" height="500" style="border: 1px solid black"></canvas>
+<script>
+
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = "#000000";
+        }
+        render(ctx) {
+            ctx.beginPath()
+            ctx.fillStyle = this.color
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
+            ctx.fill()
+            ctx.closePath()
+        }
+    }
+    let canvas = document.getElementById("myCanvas")
+    let ctx = canvas.getContext("2d")
+    let circle = new Circle(10, 10, 100)
+    circle.render(ctx)
+</script>
+
+</body>
+</html>
